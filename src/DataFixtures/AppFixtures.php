@@ -61,7 +61,7 @@ class AppFixtures extends Fixture
             ->setPhone('0622747039')
             ->setDebit(0)
             ->setCredit(0)
-            ->setRoles(['ROLE_ADMIN']);
+            ->setRoles(['ROLE_ADMIN', 'ROLE_TEACHER']);
         $manager->persist($admin);
 
         foreach ($coursesDef as $courseDef) {
