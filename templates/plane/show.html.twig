@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plane{% endblock %}
+
+{% block body %}
+    <h1>Plane</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ plane.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ plane.title }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ plane.slug }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ plane.model }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ plane.type }}</td>
+            </tr>
+            <tr>
+                <th>RentalPrice</th>
+                <td>{{ plane.rentalPrice }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('plane_index') }}">back to list</a>
+
+    <a href="{{ path('plane_edit', {'id': plane.id}) }}">edit</a>
+
+    {{ include('plane/_delete_form.html.twig') }}
+{% endblock %}

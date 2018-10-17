@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Plane{% endblock %}
+
+{% block body %}
+    <h1>Edit Plane</h1>
+
+    {{ include('plane/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('plane_index') }}">back to list</a>
+
+    {{ include('plane/_delete_form.html.twig') }}
+{% endblock %}

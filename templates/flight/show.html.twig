@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Flight{% endblock %}
+
+{% block body %}
+    <h1>Flight</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ flight.id }}</td>
+            </tr>
+            <tr>
+                <th>FlightTime</th>
+                <td>{{ flight.flightTime }}</td>
+            </tr>
+            <tr>
+                <th>FloorTime</th>
+                <td>{{ flight.floorTime }}</td>
+            </tr>
+            <tr>
+                <th>Escale</th>
+                <td>{{ flight.escale ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>IsFlightBook</th>
+                <td>{{ flight.isFlightBook ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>IsLPE</th>
+                <td>{{ flight.isLPE ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>PaymentType</th>
+                <td>{{ flight.paymentType }}</td>
+            </tr>
+            <tr>
+                <th>IsPaid</th>
+                <td>{{ flight.isPaid ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>EscaleLocation</th>
+                <td>{{ flight.escaleLocation }}</td>
+            </tr>
+            <tr>
+                <th>StartAt</th>
+                <td>{{ flight.startAt ? flight.startAt|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndAt</th>
+                <td>{{ flight.endAt ? flight.endAt|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Day</th>
+                <td>{{ flight.day ? flight.day|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Fuel</th>
+                <td>{{ flight.fuel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('flight_index') }}">back to list</a>
+
+    <a href="{{ path('flight_edit', {'id': flight.id}) }}">edit</a>
+
+    {{ include('flight/_delete_form.html.twig') }}
+{% endblock %}

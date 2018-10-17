@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plane index{% endblock %}
+
+{% block body %}
+    <h1>Plane index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Slug</th>
+                <th>Model</th>
+                <th>Type</th>
+                <th>RentalPrice</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plane in planes %}
+                <tr>
+                    <td>{{ plane.id }}</td>
+                    <td>{{ plane.title }}</td>
+                    <td>{{ plane.slug }}</td>
+                    <td>{{ plane.model }}</td>
+                    <td>{{ plane.type }}</td>
+                    <td>{{ plane.rentalPrice | localizedcurrency('EUR', 'fr-FR') }}</td>
+                    <td>
+                        <a href="{{ path('plane_show', {'id': plane.id}) }}">show</a>
+                        <a href="{{ path('plane_edit', {'id': plane.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('plane_new') }}">Create new</a>
+{% endblock %}

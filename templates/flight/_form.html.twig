@@ -1,0 +1,57 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <strong>Informations générales</strong>
+            </div>
+            <div class="card-body">
+                {{ form_row(form.plane) }}
+                {{ form_row(form.course) }}
+                {{ form_row(form.student)}}
+                {{ form_row(form.isFlightBook) }}
+                {{ form_row(form.isLPE)}}
+            </div>
+        </div>
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <strong>Date et heures</strong>
+            </div>
+            <div class="card-body">
+                {{ form_row(form.day)}}
+                {{ form_row(form.startAt) }}
+                {{ form_row(form.endAt)}}
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <strong>Détails</strong>
+            </div>
+            <div class="card-body">
+                {{ form_row(form.flightTime) }}
+                {{ form_row(form.floorTime)}}
+                {{ form_row(form.escaleLocation)}}
+                {{ form_row(form.fuel)}}
+            </div>
+        </div>
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                <strong>Financier</strong>
+            </div>
+            <div class="card-body">
+                {{ form_row(form.paymentType)}}
+                {{ form_row(form.isPaid) }}
+            </div>
+        </div>
+        <div class="alert alert-primary">
+            <h2 class="alert-heading">Enregistrer le nouveau vol ?</h2>
+            <p>Vous êtes sur le point d'enregistrer un nouveau vol, si vous avez terminé de remplir le formulaire, vous pouvez procéder !</p>
+            <button type="submit" class="btn btn-primary">Enregistrer!</button>
+            <a href="{{path('account_flights')}}" class="btn btn-link">Annuler et retourner en arrière</a>
+        </div>
+    </div>
+</div>
+
+{{ form_end(form) }}
