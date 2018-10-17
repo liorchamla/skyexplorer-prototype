@@ -54,11 +54,11 @@ class AppFixtures extends Fixture
         $flights = [];
 
         $admin = new User();
-        $admin->setEmail('lchamla@gmail.com')
+        $admin->setEmail('romain@sky.com')
             ->setPassword($this->encoder->encodePassword($admin, 'pass'))
-            ->setFirstName('Lior')
-            ->setLastName('Chamla')
-            ->setPhone('0622747039')
+            ->setFirstName('Romain')
+            ->setLastName('Saubal Bayard')
+            ->setPhone('00224455')
             ->setDebit(0)
             ->setCredit(0)
             ->setRoles(['ROLE_ADMIN', 'ROLE_TEACHER']);
@@ -112,6 +112,8 @@ class AppFixtures extends Fixture
             $manager->persist($teacher);
             $teachers[] = $teacher;
         }
+
+        $teachers[] = $admin;
 
         for ($i = 0; $i < 30; $i++) {
             $student = new User();
